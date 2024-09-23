@@ -1,0 +1,6 @@
+check codes of chat.jsx
+firebase firestore databse
+toastify
+async await 
+useEffect of app.jsx
+context(AppContext)
