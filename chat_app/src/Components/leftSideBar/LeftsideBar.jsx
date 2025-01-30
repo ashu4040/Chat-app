@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./LeftsideBar.css";
+import "./LeftSideBar.css";
 import assets from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
 import {
