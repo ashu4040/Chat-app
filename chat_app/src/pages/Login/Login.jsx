@@ -6,8 +6,8 @@ import { signup, login, resetPass } from "../../config/Firebase";
 const Login = () => {
   const [currentState, setCurrentState] = useState("Sign Up");
   const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("ayush5@gmail.com");
+  const [password, setPassword] = useState("Ayush5@");
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -37,6 +37,7 @@ const Login = () => {
             required
           />
         ) : null}
+
         <input
           onChange={(e) => setEmail(e.target.value)}
           value={email}

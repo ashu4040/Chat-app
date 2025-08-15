@@ -6,16 +6,25 @@ import ChatBox from "../../Components/chatbox/ChatBox";
 import { AppContext } from "../../context/AppContext";
 
 const Chat = () => {
-  const { chatData, userData } = useContext(AppContext);
+  const { chatData, userData, setChatUser } = useContext(AppContext);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (chatData && userData) {
       setLoading(false);
+
+      // ✅ Auto-select admin chat
+      const adminChat = chatData.find(
+        (chat) => chat.userData?.name?.toLowerCase() === "admin"
+      );
+
+      if (adminChat) {
+        setChatUser(adminChat.userData);
+      }
     } else {
       setLoading(true);
     }
-  }, [chatData, userData]);
+  }, [chatData, userData, setChatUser]);
 
   return (
     <div className="chat">

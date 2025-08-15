@@ -134,6 +134,15 @@ const LeftsideBar = () => {
   };
 
   useEffect(() => {
+    // Automatically search for 'admin' when the sidebar loads
+    const autoSearch = async () => {
+      const fakeEvent = { target: { value: "admin" } };
+      await inputHandler(fakeEvent);
+    };
+    autoSearch();
+  }, []);
+
+  useEffect(() => {
     const updateChatUserData = async () => {
       if (chatUser) {
         const userRef = doc(db, "user", chatUser.userData.id);
